@@ -12,5 +12,7 @@ public class AnsiCodes {
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
     public static final String ANSI_CLEAR_SCREEN = "\033[H\033[2J";
+    public static final String ANSI_LINE_UP = "\033[1A";
+    public static final String ANSI_LINE_CLEAR = "\033[2K";
 
 }

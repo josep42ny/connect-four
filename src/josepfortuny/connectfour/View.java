@@ -30,4 +30,10 @@ public class View {
         System.out.flush();
     }
 
+    public static void clearLastLine() {
+        System.out.print(AnsiCodes.ANSI_LINE_UP);
+        System.out.print(AnsiCodes.ANSI_LINE_CLEAR);
+        System.out.flush();
+    }
+
 }

@@ -1,6 +1,6 @@
 package josepfortuny.connectfour;
 
-public class AnsiColor {
+public class AnsiCodes {
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -11,5 +11,6 @@ public class AnsiColor {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String ANSI_CLEAR_SCREEN = "\033[H\033[2J";
 
 }

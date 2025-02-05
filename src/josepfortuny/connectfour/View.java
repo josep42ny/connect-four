@@ -14,7 +14,7 @@ public class View {
                 if (grid[row][cell] == null) {
                     content += " ○ ";
                 } else {
-                    content += grid[row][cell].getAnsiColor() + " ● " + AnsiColor.ANSI_RESET;
+                    content += grid[row][cell].getAnsiColor() + " ● " + AnsiCodes.ANSI_RESET;
                 }
             }
             content += " ┃\n";
@@ -23,6 +23,11 @@ public class View {
 
         System.out.println(content);
 
+    }
+
+    public static void clearScreen() {
+        System.out.print(AnsiCodes.ANSI_CLEAR_SCREEN);
+        System.out.flush();
     }
 
 }

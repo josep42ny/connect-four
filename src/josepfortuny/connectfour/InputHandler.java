@@ -6,7 +6,7 @@ public class InputHandler {
         Character[] players = new Character[2];
 
         for (int i = 0; i < players.length; i++) {
-            System.out.print(">>> Player " + i + 1 + " <<<\n");
+            System.out.print(">>> Player " + (i + 1) + " <<<\n");
             String name = read("Name: ");
             String color = read("Color: ");
             players[i] = new Character(name, color);

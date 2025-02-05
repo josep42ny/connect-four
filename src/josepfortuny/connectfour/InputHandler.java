@@ -10,6 +10,7 @@ public class InputHandler {
             String name = read("Name: ");
             String color = read("Color: ");
             players[i] = new Character(name, color);
+            System.out.println();
         }
 
         return players;
@@ -17,7 +18,9 @@ public class InputHandler {
 
     private String read(String prompt) {
         String input = "";
+        System.out.println();
         do {
+            View.clearLastLine();
             System.out.print(prompt);
             input = System.console().readLine();
         } while (input.isEmpty());

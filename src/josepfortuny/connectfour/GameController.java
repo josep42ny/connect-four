@@ -2,13 +2,19 @@ package josepfortuny.connectfour;
 
 public class GameController {
 
-    int width = 7;
-    int height = 6;
     View gameView;
+    Board gameBoard;
 
     public void awake() {
 
-        gameView = new View(width, height);
+        gameView = new View();
+        gameBoard = new Board(6, 7);
+        update();
+
+    }
+
+    public void update() {
+
 
     }
 

@@ -4,15 +4,16 @@ public class Board {
 
     private int rows;
     private int columns;
-    private Character[][] playGrid = new Character[6][7];
+    private Character[][] gameGrid;
 
     public Board(int rows, int columns) {
         this.rows = rows;
         this.columns = columns;
+        this.gameGrid = new Character[rows][columns];
     }
 
-    public Character[][] getPlayGrid() {
-        return playGrid;
+    public Character[][] getGameGrid() {
+        return gameGrid;
     }
 
     public void play(Character character, int column) {
@@ -21,8 +22,8 @@ public class Board {
     }
 
     private int findFreeRow(int column) {
-        for (int row = playGrid.length - 1; row >= 0; row--) {
-            if (playGrid[row][column] == null) {
+        for (int row = gameGrid.length - 1; row >= 0; row--) {
+            if (gameGrid[row][column] == null) {
                 return row;
             }
         }
@@ -30,7 +31,7 @@ public class Board {
     }
 
     public boolean canDropPiece(int column) {
-        return playGrid[0][column] == null;
+        return gameGrid[0][column] == null;
     }
 
 }

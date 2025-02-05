@@ -5,7 +5,7 @@ public class View {
     public static void drawBoard(Board board) {
 
         String content = "";
-        Character[][] grid = board.getPlayGrid();
+        Character[][] grid = board.getGameGrid();
 
         content += "┎╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┒\n";
         for (int row = 0; row < grid.length; row++) {

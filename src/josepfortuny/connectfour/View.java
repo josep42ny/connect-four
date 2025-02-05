@@ -16,7 +16,9 @@ public class View {
         String content = "";
         Character[][] grid = board.getPlayGrid();
 
+        content += "┎╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┒\n";
         for (int row = 0; row < grid.length; row++) {
+            content += "┃ ";
             for (int cell = 0; cell < grid[row].length; cell++) {
                 if (grid[row][cell] == null) {
                     content += " ○ ";
@@ -24,22 +26,12 @@ public class View {
                     content += grid[row][cell].getAnsiColor() + " ● " + ANSI_RESET;
                 }
             }
-            content += "\n";
+            content += " ┃\n";
         }
+        content += "┗━━━━━━━━━━━━━━━━━━━━━━━┛";
 
-        String out =
-                ">>> Connect Four <<<" + "\n" + "\n" +
-                        "┎╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┒" + "\n" +
-                        "┃  ●  ●  ●  ●  ●  ●  ●  ┃" + "\n" +
-                        "┃  ●  ●  ●  ●  ●  ●  ●  ┃" + "\n" +
-                        "┃  ●  ●  ●  ●  ●  ●  ●  ┃" + "\n" +
-                        "┃  ●  ●  ●  ●  ●  ●  ●  ┃" + "\n" +
-                        "┃  ●  ●  ●  ●  ●  ●  ●  ┃" + "\n" +
-                        "┃  ●  ●  ●  ●  ●  ●  ●  ┃" + "\n" +
-                        "┗━━━━━━━━━━━━━━━━━━━━━━━┛" + "\n";
-        System.out.println(out);
-        // ○
-        // ●
+        System.out.println(content);
+
     }
 
 }

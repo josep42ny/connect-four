@@ -7,4 +7,9 @@ public class Board {
     public Character[][] getPlayGrid() {
         return playGrid;
     }
+
+    public void play(Character character, int column) {
+        playGrid[0][column] = character;
+    }
+
 }

@@ -2,7 +2,7 @@ package josepfortuny.connectfour;
 
 public class Character {
 
-    private String ansiColor = "\u001B[30m";
+    private String ansiColor;
 
     public Character(String ansiColor) {
         this.ansiColor = ansiColor;

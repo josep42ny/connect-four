@@ -5,9 +5,11 @@ public class GameController {
     InputHandler inputHandler;
     Board gameBoard;
     Character[] players;
+    int gameState;
 
     public void awake() {
 
+        gameState = GameState.RUN;
         inputHandler = new InputHandler();
         gameBoard = new Board(6, 7);
         players = inputHandler.askForPlayers();
@@ -17,6 +19,20 @@ public class GameController {
 
     public void update() {
 
+        while (gameState == GameState.RUN) {
+
+            for (Character player : players) {
+
+                int move;
+                do {
+                    move = inputHandler.askMoveFrom(player);
+                } while (!gameBoard.canDropPiece(move));
+                
+                gameBoard.play(player, move);
+
+            }
+
+        }
 
     }
 

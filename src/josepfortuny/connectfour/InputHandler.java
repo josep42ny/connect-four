@@ -2,14 +2,15 @@ package josepfortuny.connectfour;
 
 public class InputHandler {
 
+    private static final String[] COLORS = {AnsiCodes.ANSI_CYAN, AnsiCodes.ANSI_YELLOW};
+
     public Character[] askForPlayers() {
         Character[] players = new Character[2];
 
         for (int i = 0; i < players.length; i++) {
-            System.out.print(">>> Player " + (i + 1) + " <<<\n");
+            System.out.print(COLORS[i] + ">>> ● Player " + (i + 1) + " <<<\n" + AnsiCodes.ANSI_RESET);
             String name = read("Name: ");
-            String color = read("Color: ");
-            players[i] = new Character(name, color);
+            players[i] = new Character(name, COLORS[i]);
             System.out.println();
         }
 

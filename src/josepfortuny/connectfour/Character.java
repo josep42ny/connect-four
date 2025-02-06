@@ -9,6 +9,10 @@ public class Character {
         this.ansiColor = ansiColor;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getAnsiColor() {
         return ansiColor;
     }

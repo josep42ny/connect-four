@@ -25,6 +25,10 @@ public class View {
 
     }
 
+    public static void drawCurrentPlayer(Character player) {
+        System.out.println(player.getAnsiColor() + player.getName() + "'s turn" + AnsiCodes.ANSI_RESET);
+    }
+
     public static void clearScreen() {
         System.out.print(AnsiCodes.ANSI_CLEAR_SCREEN);
         System.out.flush();

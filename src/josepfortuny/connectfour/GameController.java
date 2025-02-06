@@ -23,11 +23,10 @@ public class GameController {
 
             for (Character player : players) {
 
-                View.clearScreen();
-                View.drawBoard(gameBoard);
-
                 int move;
                 do {
+                    View.clearScreen();
+                    View.drawBoard(gameBoard);
                     View.drawCurrentPlayer(player);
                     move = inputHandler.askMove();
                 } while (!gameBoard.canDropPiece(move));

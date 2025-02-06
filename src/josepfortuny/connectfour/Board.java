@@ -18,6 +18,8 @@ public class Board {
 
     public void play(Character character, int column) {
 
+        int row = findFreeRow(column);
+        gameGrid[row][column] = character;
 
     }
 

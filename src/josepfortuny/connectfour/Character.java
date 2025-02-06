@@ -9,8 +9,13 @@ public class Character {
     private String ansiColor;
 
     public Character(String name) {
+        this.name = name;
         this.ansiColor = COLORS[count];
         this.id = count++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

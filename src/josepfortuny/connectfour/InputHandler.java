@@ -16,9 +16,10 @@ public class InputHandler {
         return players;
     }
 
-    public int askMoveFrom(Character player) {
-        String input = read(player.getAnsiColor() + player.getName() + AnsiCodes.ANSI_RESET);
-
+    public int askMove() {
+        String input = read(AnsiCodes.ANSI_RESET);
+        int parsed = Integer.parseInt(input);
+        return parsed;
     }
 
     private String read(String prompt) {

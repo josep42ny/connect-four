@@ -16,10 +16,23 @@ public class Board {
         return gameGrid;
     }
 
-    public void play(Character character, int column) {
+    public void play(Character player, int column) {
 
         int row = findFreeRow(column);
-        gameGrid[row][column] = character;
+        gameGrid[row][column] = player;
+        System.out.println(checkWin(player, row, column));
+
+    }
+
+    private boolean checkWin(Character player, int row, int column) {
+
+        for (int i = 0; i < gameGrid[row].length; i++) {
+            //if (gameGrid[row][i].getId() == player.getId()) {
+            //todo
+            //}
+        }
+
+        return false;
 
     }
 
@@ -33,7 +46,15 @@ public class Board {
     }
 
     public boolean canDropPiece(int column) {
+        if (!validColumn(column)) {
+            return false;
+        }
+        
         return gameGrid[0][column] == null;
+    }
+
+    public boolean validColumn(int column) {
+        return column < columns && column >= 0;
     }
 
 }

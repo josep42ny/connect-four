@@ -24,6 +24,7 @@ public class GameController {
             for (Character player : players) {
 
                 int move;
+
                 do {
                     View.clearScreen();
                     View.drawBoard(gameBoard);

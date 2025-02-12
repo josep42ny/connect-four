@@ -26,29 +26,35 @@ public class Board {
 
     public boolean checkWin(Character player, int row, int column) {
 
-        //checkLine(0, row, 1, 0);
-        //checkLine(column >= row ? column - row : 0, row >= column ? row - column : 0, 1, 1);
-        //checkLine(column, 0, 0, 1);
-        checkLine(column >= (gameGrid.length - row - 1) ? column - (gameGrid.length - row - 1) : 0, column >= (gameGrid.length - row - 1) ? gameGrid.length - 1 : row + column, 1, -1);
+        checkLine(player, 0, row, 1, 0);
+        checkLine(player, column >= row ? column - row : 0, row >= column ? row - column : 0, 1, 1);
+        checkLine(player, column, 0, 0, 1);
+        checkLine(player, column >= (gameGrid.length - row - 1) ? column - (gameGrid.length - row - 1) : 0, column >= (gameGrid.length - row - 1) ? gameGrid.length - 1 : row + column, 1, -1);
 
         return false;
 
     }
 
-    private void checkLine(int positionX, int positionY, int offsetX, int offsetY) {
+    private void checkLine(Character player, int positionX, int positionY, int offsetX, int offsetY) {
         int posX = positionX;
         int posY = positionY;
         int count = 0;
 
         while ((posY >= 0 && posY < gameGrid.length) && (posX >= 0 && posX < gameGrid[posY].length)) {
             if (count >= 4) {
-
+                GameController.getInstance().setGameState(GameState.GAMEOVER);
+                break;
+            }
+            if (gameGrid[posY][posX] != null && gameGrid[posY][posX].equals(player)) {
+                count++;
+            } else {
+                count = 0;
             }
             posX += offsetX;
             posY += offsetY;
         }
 
-        System.out.println("(" + posY + ", " + posX + ")");
+        System.out.println(count);
     }
 
     private int findFreeRow(int column) {

@@ -17,6 +17,10 @@ public final class GameController {
         return INSTANCE;
     }
 
+    public void setGameState(int gameState) {
+        this.gameState = gameState;
+    }
+
     public void awake() {
 
         gameState = GameState.RUN;

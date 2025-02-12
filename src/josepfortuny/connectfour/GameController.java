@@ -12,9 +12,12 @@ public class GameController {
         gameState = GameState.RUN;
         inputHandler = new InputHandler();
         gameBoard = new Board(6, 7);
+        gameBoard.checkLine(0, 0, 1, 0);
+
+        /*
         players = inputHandler.askForPlayers();
         update();
-
+*/
     }
 
     public void update() {

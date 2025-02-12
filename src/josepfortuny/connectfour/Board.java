@@ -36,6 +36,18 @@ public class Board {
 
     }
 
+    public void checkLine(int positionX, int positionY, int offsetX, int offsetY) {
+        int posX = positionX;
+        int posY = positionY;
+
+        while ((posY >= 0 && posY < gameGrid.length) && (posX >= 0 && posX < gameGrid[posY].length)) {
+            System.out.println("(" + posY + ", " + posX + ")");
+            posX += offsetX;
+            posY += offsetY;
+        }
+
+    }
+
     private int findFreeRow(int column) {
         for (int row = gameGrid.length - 1; row >= 0; row--) {
             if (gameGrid[row][column] == null) {
@@ -49,7 +61,7 @@ public class Board {
         if (!validColumn(column)) {
             return false;
         }
-        
+
         return gameGrid[0][column] == null;
     }
 

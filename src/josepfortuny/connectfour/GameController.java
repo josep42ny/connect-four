@@ -1,18 +1,28 @@
 package josepfortuny.connectfour;
 
-public class GameController {
+public final class GameController {
 
-    InputHandler inputHandler;
-    Board gameBoard;
-    Character[] players;
-    int gameState;
+    private static GameController INSTANCE;
+    private InputHandler inputHandler;
+    private Board gameBoard;
+    private Character[] players;
+    private int gameState;
+
+    private GameController() {};
+
+    public static GameController getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new GameController();
+        }
+        return INSTANCE;
+    }
 
     public void awake() {
 
         gameState = GameState.RUN;
         inputHandler = new InputHandler();
         gameBoard = new Board(6, 7);
-        gameBoard.checkWin(new Character("a"), 3, 1);
+        gameBoard.checkWin(new Character("a"), 4, 3);
 
         /*
         players = inputHandler.askForPlayers();

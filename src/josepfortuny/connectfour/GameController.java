@@ -26,12 +26,9 @@ public final class GameController {
         gameState = GameState.RUN;
         inputHandler = new InputHandler();
         gameBoard = new Board(6, 7);
-        gameBoard.checkWin(new Character("a"), 4, 3);
-
-        /*
         players = inputHandler.askForPlayers();
         update();
-*/
+
     }
 
     public void update() {
@@ -53,9 +50,17 @@ public final class GameController {
 
                 View.clearScreen();
                 View.drawBoard(gameBoard);
+
+                if (gameState == GameState.GAME_OVER) {
+                    gameOver();
+                }
             }
 
         }
+
+    }
+
+    private void gameOver() {
 
     }
 

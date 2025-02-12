@@ -42,7 +42,7 @@ public class Board {
 
         while ((posY >= 0 && posY < gameGrid.length) && (posX >= 0 && posX < gameGrid[posY].length)) {
             if (count >= 4) {
-                GameController.getInstance().setGameState(GameState.GAMEOVER);
+                GameController.getInstance().setGameState(GameState.GAME_OVER);
                 break;
             }
             if (gameGrid[posY][posX] != null && gameGrid[posY][posX].equals(player)) {

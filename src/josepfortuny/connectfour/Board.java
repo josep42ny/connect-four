@@ -24,19 +24,18 @@ public class Board {
 
     }
 
-    private boolean checkWin(Character player, int row, int column) {
+    public boolean checkWin(Character player, int row, int column) {
 
-        for (int i = 0; i < gameGrid[row].length; i++) {
-            //if (gameGrid[row][i].getId() == player.getId()) {
-            //todo
-            //}
-        }
+        //checkLine(0, row, 1, 0);
+        checkLine(column >= row ? column - row : 0, row >= column ? row - column : 0, 1, 1);
+        //checkLine(column, 0, 0, 1);
+        // todo checkLine(column >= row ? column - row : 0, row >= column ? row - column : 0, 1, 1);
 
         return false;
 
     }
 
-    public void checkLine(int positionX, int positionY, int offsetX, int offsetY) {
+    private void checkLine(int positionX, int positionY, int offsetX, int offsetY) {
         int posX = positionX;
         int posY = positionY;
 

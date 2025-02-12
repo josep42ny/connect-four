@@ -12,7 +12,7 @@ public class GameController {
         gameState = GameState.RUN;
         inputHandler = new InputHandler();
         gameBoard = new Board(6, 7);
-        gameBoard.checkLine(0, 0, 1, 0);
+        gameBoard.checkWin(new Character("a"), 3, 1);
 
         /*
         players = inputHandler.askForPlayers();

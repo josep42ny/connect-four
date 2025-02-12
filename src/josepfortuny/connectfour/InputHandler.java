@@ -17,8 +17,21 @@ public class InputHandler {
     }
 
     public int askMove() {
-        String input = read(AnsiCodes.ANSI_RESET);
-        int parsed = Integer.parseInt(input);
+        int parsed;
+
+        while (true) {
+            String input = read("");
+
+            try {
+                parsed = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                View.clearLastLine();
+                continue;
+            }
+
+            break;
+        }
+
         return parsed;
     }
 

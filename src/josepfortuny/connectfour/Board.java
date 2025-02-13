@@ -4,38 +4,33 @@ public class Board {
 
     private int rows;
     private int columns;
-    private Character[][] gameGrid;
+    private Player[][] gameGrid;
 
     public Board(int rows, int columns) {
         this.rows = rows;
         this.columns = columns;
-        this.gameGrid = new Character[rows][columns];
+        this.gameGrid = new Player[rows][columns];
     }
 
-    public Character[][] getGameGrid() {
+    public Player[][] getGameGrid() {
         return gameGrid;
     }
 
-    public void play(Character player, int column) {
-
+    public void play(Player player, int column) {
         int row = findFreeRow(column);
         gameGrid[row][column] = player;
-        System.out.println(checkWin(player, row, column));
-
     }
 
-    public boolean checkWin(Character player, int row, int column) {
-
+    public boolean checkWin(Player player, int row, int column) {
         checkLine(player, 0, row, 1, 0);
         checkLine(player, column >= row ? column - row : 0, row >= column ? row - column : 0, 1, 1);
         checkLine(player, column, 0, 0, 1);
         checkLine(player, column >= (gameGrid.length - row - 1) ? column - (gameGrid.length - row - 1) : 0, column >= (gameGrid.length - row - 1) ? gameGrid.length - 1 : row + column, 1, -1);
 
         return false;
-
     }
 
-    private void checkLine(Character player, int positionX, int positionY, int offsetX, int offsetY) {
+    private void checkLine(Player player, int positionX, int positionY, int offsetX, int offsetY) {
         int posX = positionX;
         int posY = positionY;
         int count = 0;
@@ -63,19 +58,19 @@ public class Board {
                 return row;
             }
         }
+
         return -1;
     }
 
     public boolean canDropPiece(int column) {
-        if (!validColumn(column)) {
+        boolean columnExists = column < columns && column >= 0;
+
+        if (columnExists) {
+            return gameGrid[0][column] == null; // if there's a piece at row 0, the row is full
+        } else {
             return false;
         }
 
-        return gameGrid[0][column] == null;
-    }
-
-    public boolean validColumn(int column) {
-        return column < columns && column >= 0;
     }
 
 }

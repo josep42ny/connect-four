@@ -3,9 +3,8 @@ package josepfortuny.connectfour;
 public class View {
 
     public static void drawBoard(Board board) {
-
         String content = "";
-        Character[][] grid = board.getGameGrid();
+        Player[][] grid = board.getGameGrid();
 
         content += "┎╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┒\n";
         for (int row = 0; row < grid.length; row++) {
@@ -22,10 +21,9 @@ public class View {
         content += "┗━━━━━━━━━━━━━━━━━━━━━━━┛";
 
         System.out.println(content);
-
     }
 
-    public static void drawCurrentPlayer(Character player) {
+    public static void drawCurrentPlayer(Player player) {
         System.out.println(player.getAnsiColor() + player.getName() + "'s turn" + AnsiCodes.ANSI_RESET);
     }
 

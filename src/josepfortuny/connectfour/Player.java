@@ -1,6 +1,6 @@
 package josepfortuny.connectfour;
 
-public class Character {
+public class Player {
 
     private static final String[] COLORS = {AnsiCodes.ANSI_CYAN, AnsiCodes.ANSI_YELLOW};
     private static int count = 0;
@@ -8,14 +8,10 @@ public class Character {
     private String name;
     private String ansiColor;
 
-    public Character(String name) {
-        this.name = name;
-        this.ansiColor = COLORS[count];
+    public Player(String name) {
         this.id = count++;
-    }
-
-    public int getId() {
-        return id;
+        this.name = name;
+        this.ansiColor = COLORS[id];
     }
 
     public String getName() {
@@ -26,7 +22,7 @@ public class Character {
         return ansiColor;
     }
 
-    public static String getAnsiColorFromCharacter(int id) {
+    public static String getAnsiColorById(int id) {
         return COLORS[id];
     }
 

@@ -5,10 +5,11 @@ public final class GameController {
     private static GameController INSTANCE;
     private InputHandler inputHandler;
     private Board gameBoard;
-    private Character[] players;
+    private Player[] players;
     private int gameState;
 
-    private GameController() {};
+    private GameController() {
+    }
 
     public static GameController getInstance() {
         if (INSTANCE == null) {
@@ -35,7 +36,7 @@ public final class GameController {
 
         while (gameState == GameState.RUN) {
 
-            for (Character player : players) {
+            for (Player player : players) {
 
                 int move;
 

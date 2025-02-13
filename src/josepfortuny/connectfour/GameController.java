@@ -52,7 +52,7 @@ public final class GameController {
                 View.drawBoard(gameBoard);
 
                 if (gameBoard.playerWon()) {
-                    View.displayWinner(gameBoard.getWinner());
+                    View.drawWinner(gameBoard.getWinner());
                     return;
                 }
 

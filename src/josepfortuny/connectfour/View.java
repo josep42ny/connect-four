@@ -27,6 +27,12 @@ public class View {
         System.out.println(player.getAnsiColor() + player.getName() + "'s turn" + AnsiCodes.ANSI_RESET);
     }
 
+    public static void drawWinner(Player winner) {
+        System.out.println(winner.getAnsiColor() + winner.getName() + AnsiCodes.ANSI_RESET + " ha guanyat, feliçitats!");
+        System.out.println();
+        System.out.println("aturant...");
+    }
+
     public static void clearScreen() {
         System.out.print(AnsiCodes.ANSI_CLEAR_SCREEN);
         System.out.flush();

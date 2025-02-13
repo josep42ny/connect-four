@@ -32,6 +32,7 @@ public class Board {
     public void play(Player player, int column) {
         int row = findFreeRow(column);
         gameGrid[row][column] = player;
+        checkWin(player, row, column);
     }
 
     public boolean checkWin(Player player, int row, int column) {
@@ -49,14 +50,14 @@ public class Board {
         int count = 0;
 
         while ((posY >= 0 && posY < gameGrid.length) && (posX >= 0 && posX < gameGrid[posY].length)) {
-            if (count >= 4) {
-                setWinner(player);
-                return;
-            }
             if (gameGrid[posY][posX] != null && gameGrid[posY][posX].equals(player)) {
                 count++;
             } else {
                 count = 0;
+            }
+            if (count >= 4) {
+                setWinner(player);
+                return;
             }
             posX += offsetX;
             posY += offsetY;

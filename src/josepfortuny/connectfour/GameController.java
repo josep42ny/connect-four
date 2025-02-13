@@ -24,7 +24,6 @@ public final class GameController {
 
     public void awake() {
 
-        gameState = GameState.RUN;
         inputHandler = new InputHandler();
         gameBoard = new Board(6, 7);
         players = inputHandler.askForPlayers();
@@ -34,7 +33,7 @@ public final class GameController {
 
     public void update() {
 
-        while (gameState == GameState.RUN) {
+        while ( /*todo*/) {
 
             for (Player player : players) {
 
@@ -52,9 +51,6 @@ public final class GameController {
                 View.clearScreen();
                 View.drawBoard(gameBoard);
 
-                if (gameState == GameState.GAME_OVER) {
-                    gameOver();
-                }
             }
 
         }

@@ -5,6 +5,7 @@ public class Board {
     private int rows;
     private int columns;
     private Player[][] gameGrid;
+    private Player winner;
 
     public Board(int rows, int columns) {
         this.rows = rows;
@@ -14,6 +15,18 @@ public class Board {
 
     public Player[][] getGameGrid() {
         return gameGrid;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public boolean playerWon() {
+        return winner != null;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
     }
 
     public void play(Player player, int column) {
@@ -37,8 +50,8 @@ public class Board {
 
         while ((posY >= 0 && posY < gameGrid.length) && (posX >= 0 && posX < gameGrid[posY].length)) {
             if (count >= 4) {
-                // todo
-                break;
+                setWinner(player);
+                return;
             }
             if (gameGrid[posY][posX] != null && gameGrid[posY][posX].equals(player)) {
                 count++;

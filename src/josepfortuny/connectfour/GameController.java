@@ -33,7 +33,7 @@ public final class GameController {
 
     public void update() {
 
-        while ( /*todo*/) {
+        while (true) {
 
             for (Player player : players) {
 
@@ -51,13 +51,14 @@ public final class GameController {
                 View.clearScreen();
                 View.drawBoard(gameBoard);
 
+                if (gameBoard.playerWon()) {
+                    View.displayWinner(gameBoard.getWinner());
+                    return;
+                }
+
             }
 
         }
-
-    }
-
-    private void gameOver() {
 
     }
 

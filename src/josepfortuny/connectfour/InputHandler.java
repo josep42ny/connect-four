@@ -2,8 +2,14 @@ package josepfortuny.connectfour;
 
 public class InputHandler {
 
+    private int playerAmount;
+
+    public InputHandler(int playerAmount) {
+        this.playerAmount = playerAmount;
+    }
+
     public Player[] askForPlayers() {
-        Player[] players = new Player[2];
+        Player[] players = new Player[playerAmount];
 
         for (int i = 0; i < players.length; i++) {
             System.out.print(Player.getAnsiColorById(i) + ">>> ● Player " + (i + 1) + " <<<\n" + AnsiCodes.ANSI_RESET);

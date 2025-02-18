@@ -1,8 +1,5 @@
 package josepfortuny.connectfour;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 public class InputHandler {
 
     private int playerAmount;

@@ -1,5 +1,8 @@
 package josepfortuny.connectfour;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class InputHandler {
 
     private int playerAmount;
@@ -8,17 +11,17 @@ public class InputHandler {
         this.playerAmount = playerAmount;
     }
 
-    public Player[] askForPlayers() {
-        Player[] players = new Player[playerAmount];
+    public String[] askForPlayers() {
+        String[] names = new String[playerAmount];
 
-        for (int i = 0; i < players.length; i++) {
-            System.out.print(Player.getAnsiColorById(i) + ">>> ● Player " + (i + 1) + " <<<\n" + AnsiCodes.ANSI_RESET);
-            String name = read("Name: ");
-            players[i] = new Player(name);
+        for (int i = 0; i < names.length; i++) {
+            System.out.print(AnsiCodes.paintString("Enter name for player " + (i + 1), AnsiCodes.ANSI_COLORS[i]));
+            String name = read("> ");
+            names[i] = name;
             System.out.println();
         }
 
-        return players;
+        return names;
     }
 
     public int askMove() {

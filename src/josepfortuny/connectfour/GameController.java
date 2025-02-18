@@ -13,7 +13,11 @@ public class GameController {
 
         inputHandler = new InputHandler(playerAmount);
         gameBoard = new Board(boardRows, boardColumns);
-        players = inputHandler.askForPlayers();
+        String[] names = inputHandler.askForPlayers();
+        players = new Player[names.length];
+        for (int i = 0; i < players.length; i++) {
+            players[i] = new Player(names[i]);
+        }
         update();
 
     }

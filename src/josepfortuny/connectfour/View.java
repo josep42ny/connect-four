@@ -13,7 +13,7 @@ public class View {
                 if (grid[row][cell] == null) {
                     content += " ○ ";
                 } else {
-                    content += grid[row][cell].getAnsiColor() + " ● " + AnsiCodes.ANSI_RESET;
+                    content += AnsiCodes.paintString(" ● ", grid[row][cell].getAnsiColor());
                 }
             }
             content += " ┃\n";
@@ -24,11 +24,11 @@ public class View {
     }
 
     public static void drawCurrentPlayer(Player player) {
-        System.out.println(player.getAnsiColor() + player.getName() + "'s turn" + AnsiCodes.ANSI_RESET);
+        System.out.println(AnsiCodes.paintString(player.getName() + "'s turn", player.getAnsiColor()));
     }
 
     public static void drawWinner(Player winner) {
-        System.out.println(winner.getAnsiColor() + winner.getName() + AnsiCodes.ANSI_RESET + " ha guanyat, feliçitats!");
+        System.out.println(AnsiCodes.paintString(winner.getName() + " ha guanyat, feliçitats!", winner.getAnsiColor()));
         System.out.println();
         System.out.println("aturant...");
     }

@@ -1,26 +1,10 @@
 package josepfortuny.connectfour;
 
-public final class GameController {
+public class GameController {
 
-    private static GameController INSTANCE;
     private InputHandler inputHandler;
     private Board gameBoard;
     private Player[] players;
-    private int gameState;
-
-    private GameController() {
-    }
-
-    public static GameController getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new GameController();
-        }
-        return INSTANCE;
-    }
-
-    public void setGameState(int gameState) {
-        this.gameState = gameState;
-    }
 
     public void awake() {
 

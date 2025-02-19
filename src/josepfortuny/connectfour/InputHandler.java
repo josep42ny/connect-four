@@ -12,7 +12,7 @@ public class InputHandler {
         String[] names = new String[playerAmount];
 
         for (int i = 0; i < names.length; i++) {
-            System.out.print(AnsiCodes.paintString("Enter name for player " + (i + 1), AnsiCodes.ANSI_COLORS[i]));
+            System.out.println(AnsiCodes.paintString("Enter name for player " + (i + 1), AnsiCodes.ANSI_COLORS[i]));
             String name = read("> ");
             names[i] = name;
             System.out.println();

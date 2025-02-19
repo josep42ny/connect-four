@@ -62,8 +62,6 @@ public class Board {
             posX += offsetX;
             posY += offsetY;
         }
-
-        System.out.println(count);
     }
 
     private int findFreeRow(int column) {

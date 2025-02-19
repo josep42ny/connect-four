@@ -11,7 +11,7 @@ public class AnsiCodes {
     private static final String ANSI_PURPLE = "\u001B[35m";
     private static final String ANSI_CYAN = "\u001B[36m";
     private static final String ANSI_WHITE = "\u001B[37m";
-    public static final String[] ANSI_COLORS = {ANSI_BLACK, ANSI_RED, ANSI_GREEN, ANSI_YELLOW, ANSI_BLUE, ANSI_PURPLE, ANSI_CYAN, ANSI_WHITE};
+    public static final String[] ANSI_COLORS = {ANSI_YELLOW, ANSI_CYAN, ANSI_BLACK, ANSI_RED, ANSI_GREEN, ANSI_BLUE, ANSI_PURPLE, ANSI_WHITE};
     public static final String ANSI_CLEAR_SCREEN = "\033[H\033[2J";
     public static final String ANSI_LINE_UP = "\033[1A";
     public static final String ANSI_LINE_CLEAR = "\033[2K";

@@ -4,7 +4,7 @@ public class Board {
 
     private int rows;
     private int columns;
-    private Player[][] gameGrid;
+    private final Player[][] gameGrid;
     private Player winner;
 
     public Board(int rows, int columns) {
@@ -35,13 +35,11 @@ public class Board {
         checkWin(player, row, column);
     }
 
-    public boolean checkWin(Player player, int row, int column) {
+    public void checkWin(Player player, int row, int column) {
         checkLine(player, 0, row, 1, 0);
         checkLine(player, column >= row ? column - row : 0, row >= column ? row - column : 0, 1, 1);
         checkLine(player, column, 0, 0, 1);
         checkLine(player, column >= (gameGrid.length - row - 1) ? column - (gameGrid.length - row - 1) : 0, column >= (gameGrid.length - row - 1) ? gameGrid.length - 1 : row + column, 1, -1);
-
-        return false;
     }
 
     private void checkLine(Player player, int positionX, int positionY, int offsetX, int offsetY) {
@@ -62,8 +60,6 @@ public class Board {
             posX += offsetX;
             posY += offsetY;
         }
-
-        System.out.println(count);
     }
 
     private int findFreeRow(int column) {
